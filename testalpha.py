@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Apr 07 19:59:49 2019
+Created on Sun Apr 07 20:59:02 2019
 
 @author: Ted
 """
@@ -8,12 +8,19 @@ Created on Sun Apr 07 19:59:49 2019
 import csv
 
 dataDict = {}
+sampleOne = []
+sampleTwo = []
 
 with open('Ted 05-31-2012.csv', 'r') as csvFile:
     reader = csv.reader(csvFile)
     for index, row in enumerate(reader):
-        dataDict[str(index)] = row
-
+        if row[0] = '1':
+            #otherSample.add()
+            #sampleData = sampleData
+        else: 
+            sampleOne.append(row)
+            
+            
 csvFile.close()
 
 print(dataDict['13354'])
