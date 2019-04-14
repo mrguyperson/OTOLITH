@@ -7,20 +7,21 @@ Created on Sun Apr 07 20:59:02 2019
 
 import csv
 
+sampleNames = ["MACS3-2", "Pellet-2"]
+currentSample = []
 dataDict = {}
-sampleOne = []
-sampleTwo = []
 
 with open('Ted 05-31-2012.csv', 'r') as csvFile:
     reader = csv.reader(csvFile)
-    for index, row in enumerate(reader):
-        if row[0] = '1':
-            #otherSample.add()
-            #sampleData = sampleData
-        else: 
-            sampleOne.append(row)
-            
-            
+    for row in enumerate(reader):
+        if row[1][0] in sampleNames:
+            dataDict[currentSample[0][0]] = currentSample
+            currentSample = []
+        currentSample.append(row[1])
+
 csvFile.close()
 
-print(dataDict['13354'])
+for key in dataDict:
+    print("\n" + key + ": \n")
+    for row in dataDict[key]:
+        print("" + key + ": " + " ".join(row))
